@@ -1,2 +1,4 @@
-['remote "myremote"']
+[core]
+    remote = dvcremote
+['remote "dvcremote"']
     url = gdrive://1XiHg1YFeLa1Qi6ndV4jEwhEqdDC73k2Z
