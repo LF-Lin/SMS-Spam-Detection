@@ -8,6 +8,7 @@ stages:
   preprocess:
     cmd: python src/text_preprocessing.py
     deps:
+    - dataset
     - src/text_preprocessing.py
     outs:
     - output/preprocessed_data.joblib
