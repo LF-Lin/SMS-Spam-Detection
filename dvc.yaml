@@ -23,3 +23,6 @@ stages:
     - output/AdaBoost_model.joblib
     - output/accuracy_scores.png
     - output/misclassified_msgs.txt
+    metrics:
+    - output/accuracy.json:
+        cache: false

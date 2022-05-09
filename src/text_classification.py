@@ -4,6 +4,8 @@ Gets 1 variable as input: algorithm name. See 'classifiers' dictionary.
 Creates 3 files in output: `accuracy_scores.png`,
 `model.joblib`, and `misclassified_msgs.txt`.
 """
+import json
+from numpy import double
 
 import pandas as pd
 from sklearn.model_selection import train_test_split
@@ -91,6 +93,8 @@ def main():
     print('\n')
     print(accuracy)
     print('\n')
+    with open('output/accuracy.json','w') as f:
+        json.dump({"accuracy": double(accuracy.at[key, 'Accuracy Rate'])}, f) 
 
     #plot accuracy scores in a bar plot
     accuracy.plot(kind='bar', ylim=(0.85, 1.0), edgecolor='black', figsize=(10, 5))

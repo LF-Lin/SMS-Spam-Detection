@@ -38,12 +38,15 @@ stages:
       md5: d05cbef891b936ca18002c1ab4720d18
       size: 162556
     - path: src/text_classification.py
-      md5: 69aeabf3f6620ea5d96605234fe44bc8
-      size: 3766
+      md5: e4ac34a5486f6212d2fdb83e151758f1
+      size: 3930
     outs:
     - path: output/AdaBoost_model.joblib
-      md5: cb0c73e88a23dd95c1a810f54d0abdf0
+      md5: d872c98ccfa03f81af6b4c963582d780
       size: 40420
+    - path: output/accuracy.json
+      md5: 4effe8c3602b7ebcf8e84dc9f154bb52
+      size: 32
     - path: output/accuracy_scores.png
       md5: 4518d77aa403e140c2924f5686832421
       size: 18830
