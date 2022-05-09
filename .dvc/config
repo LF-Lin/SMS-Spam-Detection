@@ -1,4 +1,4 @@
 [core]
     remote = mylocalremote
 ['remote "mylocalremote"']
-    url = ../remotedvc
+    url = ../../remotedvc
