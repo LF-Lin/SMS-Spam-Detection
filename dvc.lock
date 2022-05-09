@@ -4,43 +4,49 @@ stages:
     cmd: python src/get_data.py
     deps:
     - path: src/get_data.py
-      md5: c4a499189074eec2211d6e67c41fe161
-      size: 489
+      md5: de78a6f45227f5fd62bd8ffd87bf6ac0
+      size: 589
     outs:
     - path: dataset
-      md5: 98c8e6651ea0eec3c8dc40aa13dc0760.dir
-      size: 518973
+      md5: 5a84bb806c75cbc704c9fb17e1ba8e44.dir
+      size: 604940
       nfiles: 3
   preprocess:
     cmd: python src/text_preprocessing.py
     deps:
     - path: dataset
-      md5: 98c8e6651ea0eec3c8dc40aa13dc0760.dir
-      size: 518973
+      md5: 5a84bb806c75cbc704c9fb17e1ba8e44.dir
+      size: 604940
       nfiles: 3
     - path: src/text_preprocessing.py
       md5: 353f5a9f6787a4e399c070ad29a10cbb
       size: 2590
     outs:
     - path: output/preprocessed_data.joblib
-      md5: 7eb0c460241b8f9ab0bf86c3fdbfd010
-      size: 251315
+      md5: fab689174cedd22d8b25ce0867241241
+      size: 374931
     - path: output/preprocessor.joblib
-      md5: 57be2115139538a45df2ac4d149c957a
-      size: 128349
+      md5: d05cbef891b936ca18002c1ab4720d18
+      size: 162556
   train:
     cmd: python src/text_classification.py AdaBoost
     deps:
+    - path: output/preprocessed_data.joblib
+      md5: fab689174cedd22d8b25ce0867241241
+      size: 374931
+    - path: output/preprocessor.joblib
+      md5: d05cbef891b936ca18002c1ab4720d18
+      size: 162556
     - path: src/text_classification.py
       md5: 69aeabf3f6620ea5d96605234fe44bc8
       size: 3766
     outs:
     - path: output/AdaBoost_model.joblib
-      md5: 852ca34a0064f50fc4a5cfe4636e8bcb
+      md5: cb0c73e88a23dd95c1a810f54d0abdf0
       size: 40420
     - path: output/accuracy_scores.png
-      md5: d74c27cd33912bae877681de6e95ef70
-      size: 18832
+      md5: 4518d77aa403e140c2924f5686832421
+      size: 18830
     - path: output/misclassified_msgs.txt
-      md5: 68221ca335f04c37c9675e75199c4c65
-      size: 1357
+      md5: 92057c16804d70dc1f8e04aa34d1cd7e
+      size: 3923
